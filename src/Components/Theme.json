@@ -1,0 +1,62 @@
+{
+    "name": "Dark Modern Dashboard",
+    "dataColors": [
+      "#4FD1C5", "#F6AD55", "#63B3ED", "#FC8181", "#9F7AEA",
+      "#68D391", "#ED8936", "#4299E1", "#F56565", "#B794F4"
+    ],
+    "background": "#1E1E2F",
+    "foreground": "#FFFFFF",
+    "tableAccent": "#FFA07A",
+    "visualStyles": {
+      "*": {
+        "*": {
+          "color": { "solid": { "color": "#CBD5E0" } },
+          "fontFamily": "Segoe UI",
+          "background": { "solid": { "color": "#1E1E2F" } }
+        },
+        "title": {
+          "color": { "solid": { "color": "#FFFFFF" } },
+          "fontSize": 14
+        }
+      },
+      "table": {
+        "*": {
+          "header": {
+            "fontColor": { "solid": { "color": "#FFFFFF" } },
+            "background": { "solid": { "color": "#2D3748" } }
+          },
+          "values": {
+            "fontColor": { "solid": { "color": "#CBD5E0" } },
+            "background": { "solid": { "color": "#1E1E2F" } }
+          },
+          "total": {
+            "fontColor": { "solid": { "color": "#FFFFFF" } },
+            "background": { "solid": { "color": "#2D3748" } }
+          }
+        }
+      },
+      "card": {
+        "*": {
+          "title": {
+            "color": { "solid": { "color": "#CBD5E0" } }
+          },
+          "labels": {
+            "color": { "solid": { "color": "#FFFFFF" } }
+          },
+          "background": { "solid": { "color": "#2D3748" } }
+        }
+      },
+      "slicer": {
+        "*": {
+          "header": {
+            "color": { "solid": { "color": "#FFFFFF" } }
+          },
+          "items": {
+            "color": { "solid": { "color": "#CBD5E0" } }
+          },
+          "background": { "solid": { "color": "#1E1E2F" } }
+        }
+      }
+    }
+  }
+  
