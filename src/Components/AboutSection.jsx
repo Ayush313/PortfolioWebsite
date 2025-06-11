@@ -2,7 +2,7 @@ import { Briefcase, Code, User } from "lucide-react"
 import cvpdf from "../assets/Resume.pdf"
 
 export const AboutSection = () => {
-    var pdfUrl = "../assets/Resume.pdf";
+    var pdfUrl = "../assets/FinalResume.pdf";
 
     // Function to trigger the download
     function downloadPdf() {
@@ -15,7 +15,7 @@ export const AboutSection = () => {
                 // Create a link element to trigger the download
                 var a = document.createElement("a");
                 a.href = url;
-                a.download = "Ayush Sachdev_7276725750.pdf"; // Set the desired file name
+                a.download = "AyushSachdev_7276725750.pdf"; // Set the desired file name
                 document.body.appendChild(a);
 
                 // Trigger a click event on the link element to initiate the download
@@ -30,6 +30,40 @@ export const AboutSection = () => {
             });
     }
 
+
+    function download_file() {
+        const fileURL = "../assets/FinalResume.pdf"
+        const fileName = "Ayush Sachdev_7276725750.pdf"
+// for non-IE
+if (!window.ActiveXObject) {
+    var save = document.createElement('a');
+    save.href = fileURL;
+    save.target = '_blank';
+    var filename = fileURL.substring(fileURL.lastIndexOf('/')+1);
+    save.download = fileName || filename;
+       if ( navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/) && navigator.userAgent.search("Chrome") < 0) {
+            document.location = save.href; 
+// window event not working here
+        }else{
+            var evt = new MouseEvent('click', {
+                'view': window,
+                'bubbles': true,
+                'cancelable': false
+            });
+            save.dispatchEvent(evt);
+            (window.URL || window.webkitURL).revokeObjectURL(save.href);
+        }   
+}
+
+// for IE < 11
+else if ( !! window.ActiveXObject && document.execCommand)     {
+    var _window = window.open(fileURL, '_blank');
+    _window.document.close();
+    _window.document.execCommand('SaveAs', true, fileName || fileURL)
+    _window.close();
+}
+}
+
     return (
         <section id="about" className="py-24 px-4 relative">
             {" "}
@@ -37,7 +71,6 @@ export const AboutSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     About <span className="text-primary"> Me</span>
                 </h2>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <h3 className="text-2xl font-semibold">
@@ -62,7 +95,7 @@ export const AboutSection = () => {
                             </a>
 
                             <button
-                            onClick={downloadPdf}
+                            onClick={download_file}
                                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
                             >
                                 Download Resume
